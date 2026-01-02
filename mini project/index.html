@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple CSS Game</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f0f0f0;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .game-box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 40px auto;
+            position: relative;
+            background: white;
+            overflow: hidden;
+        }
+
+        .target {
+            width: 40px;
+            height: 40px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            animation: move 3s infinite alternate;
+            cursor: pointer;
+        }
+
+        @keyframes move {
+            from {
+                top: 0;
+                left: 0;
+            }
+            to {
+                top: 160px;
+                left: 260px;
+            }
+        }
+
+        .target:active {
+            display: none;
+        }
+
+        .message {
+            display: none;
+            font-size: 20px;
+            color: green;
+            margin-top: 20px;
+        }
+
+        .target:active + .message {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🎯 Click the Target</h1>
+
+<div class="game-box">
+    <div class="target"></div>
+    <div class="message">🎉 You Win!</div>
+</div>
+
+</body>
+</html>
